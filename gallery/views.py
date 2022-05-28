@@ -5,11 +5,13 @@ from .models import Image,Location,Category
 
 def home(request):
     images = Image.get_all_images()
+    length = len(images)
     locations = Location.objects.all()
 
     context ={
         "images":images,
-        "locations":locations
+        "locations":locations,
+        "length":length
     }
 
     return render(request,'gallery/home.html',context)
@@ -19,12 +21,14 @@ def search(request):
     if 'category' in request.GET and request.GET["category"]:
         query = request.GET.get("category")
         res = Image.search_by_category(query)
+        length = len(res)
         message = f'Search results for {query}'
         
         
         context = {
             'images': res,
-            "message":message
+            "message":message,
+            "length":length
         }
 
         return render(request,'gallery/search.html',context)
