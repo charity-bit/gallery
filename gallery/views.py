@@ -23,13 +23,15 @@ def search(request):
         res = Image.search_by_category(query)
         length = len(res)
         message = f'Search results for {query}'
+        locations = Location.objects.all()
         
         
         context = {
             'images': res,
             "message":message,
             "length":length,
-            "query":query
+            "query":query,
+            "locations":locations
         }
 
         return render(request,'gallery/search.html',context)
@@ -41,13 +43,15 @@ def filter_location(request):
     if 'location' in request.GET and request.GET["location"]:
         query = request.GET.get("location")
         res = Image.filter_by_location(query)
+        locations = Location.objects.all()
         length = len(res)
         message = f'{query}'
 
         context = {
             'images': res,
             "message":message,
-            "length":length
+            "length":length,
+            "locations":locations
         }
 
         
