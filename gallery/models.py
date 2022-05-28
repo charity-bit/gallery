@@ -68,13 +68,13 @@ class Image(models.Model):
         images = cls.objects.filter(location__name__icontains = query)
         return images
 
-    # @classmethod
-    # def get_image_by_id(cls,id):
-    #     try:
-    #         image = cls.objects.get(pk = id)
-    #         return image
-    #     except:
-    #         print("not found")
+    @classmethod
+    def get_image_by_id(cls,id):
+        
+        image = cls.objects.filter(id = id)
+        print(image)
+        return image
+        
 
         
         

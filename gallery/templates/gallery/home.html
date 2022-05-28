@@ -1,4 +1,5 @@
 {% extends 'gallery/base.html' %}
+
 {% load static %}
 
 
@@ -6,40 +7,14 @@
 <link rel="stylesheet" href="{% static 'gallery/css/home.css' %}">
 {% endblock %}
 {% block content %}
-
-    
-
     <section>
         <div class="container">
-          <div class="header">
-            <h1 class="logo">PhotoGallery</h1>
-            <form role="search" action="{% url 'search-results' %}">
-             
-
-              <input type="text" id="category" placeholder="Search Images" name="category"/>
-              <button type="submit" class="submit-btn">search</button>
-          
-            </form>
-
-            <form action="{% url 'filter-results'%}">
-              <select name="location">
-                {% for loc in locations %}
-                <option value="{{loc.name}}" name="location">{{loc.name}}</option>
-               
-
-                {% endfor %}
-                
-              </select>
-              <button type="submit">filter</button>
-            </form>
-          </div>
-  
            <div class="gallery">
             {% for image in images %}
                <div class="item">
                 <a href="{{image.image.url}}" target="_blank">
                     <img  src="{{image.image.url}}">
-                    </a>
+                </a>
                     <h3>{{image.name}}</h3>
                </div>
                {% endfor %}
@@ -51,10 +26,6 @@
         
 
 
-      {% block scripts %}
-
-      <script src="{% static 'gallery/js/main.js'%}"></script>
-
-      {% endblock %}
+    
 
 {% endblock %}

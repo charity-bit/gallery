@@ -89,11 +89,11 @@ class ImageTestClass(TestCase):
 
         self.assertEqual(len(images),1)
 
-    # def test_get_image_by_id(self):
-    #     self.new_image.save_image()
-    #     image = Image.get_image_by_id(1)
+    def test_get_image_by_id(self):
+        self.new_image.save_image()
+        image = Image.get_image_by_id(self.new_image.id)
 
-    #     self.assertEqual(image.name,self.new_image.name)
+        self.assertTrue(image)
 
 
     

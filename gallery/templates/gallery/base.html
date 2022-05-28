@@ -1,4 +1,7 @@
+
 {% load static %}
+
+{% include 'gallery/nav.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +28,10 @@
         {% block scripts %}
 
         {% endblock %}
-    
+
+
+         
+<script src="{% static 'gallery/js/main.js'%}"></script>
+
 </body>
 </html>
