@@ -7,17 +7,14 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-
-
     {% if images %}
 
     {% if length < 2 %}
     <div class="category">
         {% for image in images %}
            <div class="less-3">
-            <a href="{{image.image.url}}" target="_blank">
                 <img  src="{{image.image.url}}">
-            </a>
+            </div>
                 <h3>{{image.name}}</h3>
            </div>
            {% endfor %}
@@ -27,13 +24,18 @@
     <div class="gallery">
         {% for image in images %}
            <div class="item">
-            <a href="{{image.image.url}}" target="_blank">
+            <div>
                 <img  src="{{image.image.url}}">
-            </a>
+            </div>
                 <h3>{{image.name}}</h3>
+                
            </div>
+           <div class="content hide" id="{{image.id}}">
+            <p>{{image.description}}</p>
+           </div>
+
            {% endfor %}
-        </div>
+    </div>
 
     {% endif %}
 
@@ -46,5 +48,12 @@
 </div>
 
 
+
+
+{% block scripts %}
+
+<script src="{% static 'gallery/js/modal.js'%}"></script>
+
+{% endblock %}
 
 {% endblock %}}

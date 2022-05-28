@@ -125,7 +125,7 @@ body{
 @keyframes showsearch{
 	0% {
 		opacity: 0;
-		transform: translateX(-250px);
+		transform: translateX(-150px);
 	}
 
 	100% {
