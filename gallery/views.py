@@ -11,3 +11,12 @@ def home(request):
     }
 
     return render(request,'gallery/home.html',context)
+
+def search(request):
+    images = Image.search_by_category('fashion')
+    context ={
+        "images":images
+    }
+
+
+    return (request,'gallery/search.html',context)

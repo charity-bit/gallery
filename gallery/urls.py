@@ -7,5 +7,6 @@ from . import views
 
 urlpatterns = [
 
-    path('',views.home,name='gallery-home')
+    path('',views.home,name='gallery-home'),
+    path('search',views.search,name='search-results')
 ]
