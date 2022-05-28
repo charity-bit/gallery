@@ -81,6 +81,8 @@ body{
     padding: 2%;
     display: none;
     gap: 10px;
+    animation: showsearch 2s ease 0s 1 normal forwards;
+
 }
 
 .filter select{
@@ -117,23 +119,20 @@ body{
 }
 
 
-@keyframes showsearch {
+
+
+
+@keyframes showsearch{
 	0% {
 		opacity: 0;
+		transform: translateX(-250px);
 	}
 
-	100%{
+	100% {
 		opacity: 1;
+		transform: translateX(0);
 	}
 }
-.show-search{
-    display: block;
-}
-
-.show-filter{
-    display: flex;
-}
-
 
 @media screen and (max-width:600px){
     .header{

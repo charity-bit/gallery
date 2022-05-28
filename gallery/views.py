@@ -14,7 +14,7 @@ def home(request):
         "length":length
     }
 
-    return render(request,'gallery/home.html',context)
+    return render(request,'gallery/index.html',context)
 
 def search(request):
 
