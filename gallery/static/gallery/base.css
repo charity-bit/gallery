@@ -3,6 +3,12 @@
     margin: 0;
     box-sizing: border-box;
 }
-.cont{
-    width: 80%;
+html{
+    font-family: 'Montserrat' ,sans-serif;
+    font-size: 10px;
+}
+
+body{
+    background-color: #DBE2E9;
+
 }

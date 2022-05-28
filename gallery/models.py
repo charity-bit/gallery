@@ -1,6 +1,6 @@
-from unicodedata import category
 from django.db import models
 from cloudinary.models import CloudinaryField
+
 
 # Create your models here.
 
@@ -43,7 +43,7 @@ class Image(models.Model):
     name = models.CharField(max_length=60)
     description = models.TextField()
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
-    category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name="namepp")
 
 
     def save_image(self):
@@ -61,13 +61,16 @@ class Image(models.Model):
 
     
     @classmethod
-    def search_image(cls,query):
-
-        cat = Category.objects.filter()
-        images = cls.objects.filter(category__icontains = query)
+    def search_by_category(cls,query):
+        images = cls.objects.filter(category__name__icontains = query)
         return images
 
-    #  Category.search_image("");  
+    @classmethod
+    def filter_by_location(cls,query):
+        images = cls.objects.filter(location__name__icontains = query)
+        return images
+
+     
 
     def __str__(self):
         return self.name + self.description
