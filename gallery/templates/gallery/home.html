@@ -13,9 +13,11 @@
         <div class="container">
           <div class="header">
             <h1 class="logo">PhotoGallery</h1>
-            <form role="search" action="{% url 'search-results'%}">
-              <input type="text" placeholder="Search Images" />
-              <ion-icon name="search-outline"></ion-icon>
+            <form role="search" action="{% url 'search-results' %}">
+             
+
+              <input type="text" placeholder="Search Images" name="category"/>
+              <button type="submit">search</button>
             </form>
           </div>
   
@@ -29,7 +31,7 @@
                </div>
                {% endfor %}
             </div>
-          <a class="load-more" data-img="curated">Load more</a>
+          
         </div>
       </section>
 

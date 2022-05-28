@@ -13,10 +13,21 @@ def home(request):
     return render(request,'gallery/home.html',context)
 
 def search(request):
-    images = Image.search_by_category('fashion')
-    context ={
-        "images":images
-    }
 
+    if 'category' in request.GET and request.GET["category"]:
+        query = request.GET.get("category")
+        res = Image.search_by_category(query)
+        message = f'{query}'
 
-    return (request,'gallery/search.html',context)
+        context = {
+            'images': res,
+            "message":message
+        }
+
+        
+        
+        return render(request,'gallery/search.html',context)
+
+    else:
+        message = 'You have not searched for any item'
+        return render(request,'gallery/search.html',message)
