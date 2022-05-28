@@ -1,6 +1,13 @@
 from django.shortcuts import render
+from .models import Image,Location,Category
 
 # Create your views here.
 
 def home(request):
-    return render(request,'gallery/home.html')
+    images = Image.get_all_images()
+
+    context ={
+        "images":images
+    }
+
+    return render(request,'gallery/home.html',context)

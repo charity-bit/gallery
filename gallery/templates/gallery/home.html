@@ -7,7 +7,16 @@
 {% endblock %}
 {% block content %}
 <div>
-    <h1>HOme</h1>
+    {% for image in images %}
+
+    <p>{{image.name}}</p>
+    <p>{{image.description}}</p>
+    <p>{{image.location.name}}</p>
+    <p>{{image.category.name}}</p>
+    <img src="{{image.image.url}}" alt="{{image.name}}">
+
+
+        {% endfor %}
 </div>
 
 
