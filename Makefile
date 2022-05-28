@@ -11,7 +11,7 @@ shell:
 	python3 manage.py shell
 
 makemigrations:
-	python3 manage.py makemigrations
+	python3 manage.py makemigrations 
 
 test:
 	python3 manage.py test gallery

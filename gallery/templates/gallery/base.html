@@ -8,20 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="{% static 'gallery/base.css' %}">
+    <link rel="stylesheet" href="{% static 'gallery/css/base.css' %}">
     {% block styles %}
 
     {% endblock %}
 </head>
 <body>
 
-    <div class="cont">
+    
         {% block content %}
     
         {% endblock %}
 
-    </div>
+
    
+        {% block scripts %}
+
+        {% endblock %}
     
 </body>
 </html>

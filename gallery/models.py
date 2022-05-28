@@ -16,8 +16,6 @@ class Location(models.Model):
         self.delete()
 
 
-
-
     def __str__(self):
         return self.name
 
@@ -69,6 +67,18 @@ class Image(models.Model):
     def filter_by_location(cls,query):
         images = cls.objects.filter(location__name__icontains = query)
         return images
+
+    # @classmethod
+    # def get_image_by_id(cls,id):
+    #     try:
+    #         image = cls.objects.get(pk = id)
+    #         return image
+    #     except:
+    #         print("not found")
+
+        
+        
+
 
      
 

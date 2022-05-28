@@ -3,10 +3,10 @@
 
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'gallery/home.css' %}">
+<link rel="stylesheet" href="{% static 'gallery/css/home.css' %}">
 {% endblock %}
 {% block content %}
-<div>
+
     
 
     <section>
@@ -16,8 +16,21 @@
             <form role="search" action="{% url 'search-results' %}">
              
 
-              <input type="text" placeholder="Search Images" name="category"/>
-              <button type="submit">search</button>
+              <input type="text" id="category" placeholder="Search Images" name="category"/>
+              <button type="submit" class="submit-btn">search</button>
+          
+            </form>
+
+            <form action="{% url 'filter-results'%}">
+              <select name="location">
+                {% for loc in locations %}
+                <option value="{{loc.name}}" name="location">{{loc.name}}</option>
+               
+
+                {% endfor %}
+                
+              </select>
+              <button type="submit">filter</button>
             </form>
           </div>
   
@@ -36,8 +49,12 @@
       </section>
 
         
-</div>
 
 
+      {% block scripts %}
+
+      <script src="{% static 'gallery/js/main.js'%}"></script>
+
+      {% endblock %}
 
 {% endblock %}
