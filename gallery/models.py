@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.db import models
 from cloudinary.models import CloudinaryField
 
@@ -7,8 +8,12 @@ class Location(models.Model):
     name = models.CharField(max_length=30)
 
 
-    def save_locaton(self):
+    def save_location(self):
         self.save()
+
+    
+    def delete_location(self):
+        self.delete()
 
 
 
@@ -23,6 +28,9 @@ class Category(models.Model):
 
     def save_category(self):
         self.save()
+
+    def delete_category(self):
+        self.delete()
 
 
     def __str__(self):
@@ -54,6 +62,8 @@ class Image(models.Model):
     
     @classmethod
     def search_image(cls,query):
+
+        cat = Category.objects.filter()
         images = cls.objects.filter(category__icontains = query)
         return images
 
