@@ -1,0 +1,41 @@
+{% extends 'gallery/base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'gallery/home.css' %}">
+{% endblock %}
+{% block content %}
+<div>
+    
+
+    <section>
+        <div class="container">
+          <div class="header">
+            <h1 class="logo">PhotoGallery</h1>
+            <form role="search" action="{% url 'search-results'%}">
+              <input type="text" placeholder="Search Images" />
+              <ion-icon name="search-outline"></ion-icon>
+            </form>
+          </div>
+  
+           <div class="gallery">
+            {% for image in images %}
+               <div class="item">
+                <a href="{{image.image.url}}" target="_blank">
+                    <img  src="{{image.image.url}}">
+                    </a>
+                    <h3>{{image.name}}</h3>
+               </div>
+               {% endfor %}
+            </div>
+          <a class="load-more" data-img="curated">Load more</a>
+        </div>
+      </section>
+
+        
+</div>
+
+
+
+{% endblock %}
