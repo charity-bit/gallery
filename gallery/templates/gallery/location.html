@@ -6,27 +6,43 @@
 <link rel="stylesheet" href="{% static 'gallery/css/home.css' %}">
 {% endblock %}
 {% block content %}
-<div>
-    <section>
-        <div>
-         
-          </div>
-  
-           <div class="gallery">
-            {% for image in images %}
-               <div class="item">
-                <a href="{{image.image.url}}" target="_blank">
-                    <img  src="{{image.image.url}}">
-                    </a>
-                    <h3>{{image.name}}</h3>
-               </div>
-               {% endfor %}
-            </div>
-         
-        </div>
-      </section>
+<div class="container">
 
-        
+
+    {% if images %}
+
+    {% if length < 2 %}
+    <div class="category">
+        {% for image in images %}
+           <div class="less-3">
+            <a href="{{image.image.url}}" target="_blank">
+                <img  src="{{image.image.url}}">
+            </a>
+                <h3>{{image.name}}</h3>
+           </div>
+           {% endfor %}
+        </div>
+
+    {% else %}
+    <div class="gallery">
+        {% for image in images %}
+           <div class="item">
+            <a href="{{image.image.url}}" target="_blank">
+                <img  src="{{image.image.url}}">
+            </a>
+                <h3>{{image.name}}</h3>
+           </div>
+           {% endfor %}
+        </div>
+
+    {% endif %}
+
+    {% else %}
+      <p>no images of that location</p>
+
+    {% endif %}
+  
+ 
 </div>
 
 

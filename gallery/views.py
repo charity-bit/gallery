@@ -19,15 +19,14 @@ def search(request):
     if 'category' in request.GET and request.GET["category"]:
         query = request.GET.get("category")
         res = Image.search_by_category(query)
-        message = f'{query}'
-
+        message = f'Search results for {query}'
+        
+        
         context = {
             'images': res,
             "message":message
         }
 
-        
-        
         return render(request,'gallery/search.html',context)
 
     else:
@@ -37,11 +36,13 @@ def filter_location(request):
     if 'location' in request.GET and request.GET["location"]:
         query = request.GET.get("location")
         res = Image.filter_by_location(query)
+        length = len(res)
         message = f'{query}'
 
         context = {
             'images': res,
-            "message":message
+            "message":message,
+            "length":length
         }
 
         

@@ -48,13 +48,11 @@ body{
 .search{
     padding: 2%;
     width: 50%;
-    
-    display: none;
+    display: flex;
     justify-content: right;
     animation: showsearch 2s ease 0s 1 normal forwards;
 
 }
-
 
 .search .submit-btn{
     border:none;
@@ -109,6 +107,9 @@ body{
     
 
 }
+.search-icon{
+    display: none;
+}
 
 .search-icon svg ,.filter-icon svg{
     font-size: 20px;
@@ -132,3 +133,29 @@ body{
 .show-filter{
     display: flex;
 }
+
+
+@media screen and (max-width:600px){
+    .header{
+        width: 80%;
+        margin:2% auto;
+    }
+    .search{
+        width: 100%;
+    }
+    .filter{
+        width: 100%;
+    }
+  
+    .search input{
+        font-size: 1.5vw;
+    }
+
+    .header h1{
+       
+        font-size: 2vw !important;
+        display: flex;
+        ;
+    }
+}
+    
