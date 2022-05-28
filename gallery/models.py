@@ -1,6 +1,5 @@
-from distutils.command.upload import upload
-from tkinter import CASCADE
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -32,14 +31,25 @@ class Category(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'pictures/')
+    image = CloudinaryField("image_image")
     name = models.CharField(max_length=60)
     description = models.TextField()
-    location = models.ForeignKey(Location,on_delete=CASCADE)
+    location = models.ForeignKey(Location,on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
 
     def save_image(self):
         self.save()
+
+    
+    def delete_image(self):
+        self.delete()
+
+    
+    @classmethod
+    def search_image(cls,query):
+        images = cls.objects.filter(category__icontains = query)
+        return images
 
 
     def __str__(self):
