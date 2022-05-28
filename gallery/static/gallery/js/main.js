@@ -4,7 +4,7 @@ const searchForm = document.querySelector('.search');
 const filterForm = document.querySelector('.filter'); 
 
 const searchCat = document.querySelector('.submit-btn');
-
+searchCat.disabled = true;
 
 showSearch.addEventListener('click', () => {
     searchForm.style.display = 'flex';
@@ -30,8 +30,8 @@ const input = document.querySelector('#category');
 
 input.addEventListener('change',(e)=>{
 
-    if (e.target.value === ''){
-        searchCat.disabled = true;
+    if (e.target.value !== ''){
+        searchCat.disabled = false;
     }
 })
 
