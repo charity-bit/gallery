@@ -28,7 +28,8 @@ def search(request):
         context = {
             'images': res,
             "message":message,
-            "length":length
+            "length":length,
+            "query":query
         }
 
         return render(request,'gallery/search.html',context)

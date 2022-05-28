@@ -6,9 +6,12 @@
 <link rel="stylesheet" href="{% static 'gallery/css/home.css' %}">
 {% endblock %}
 {% block content %}
+
+{% if images %}
+<p class="ttl">Search results for {{query}}</p>
+{% endif %}
+
 <div class="container">
-
-
     {% if images %}
 
     {% if length < 2 %}
@@ -38,7 +41,7 @@
     {% endif %}
 
     {% else %}
-      <p>no images of that category</p>
+      <p class="not-found">no images of category {{query}}</p>
 
     {% endif %}
   

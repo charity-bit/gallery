@@ -6,6 +6,13 @@
 <link rel="stylesheet" href="{% static 'gallery/css/home.css' %}">
 {% endblock %}
 {% block content %}
+
+
+
+{% if images %}
+<p class="ttl">Images for location {{query}}</p>
+{% endif %}
+
 <div class="container">
 
 
@@ -38,8 +45,7 @@
     {% endif %}
 
     {% else %}
-      <p>no images of that location</p>
-
+    <p class="not-found">no images of the location {{Nairobi}}</p>
     {% endif %}
   
  
