@@ -1,19 +1,25 @@
-// const allItems = document.querySelectorAll('.item');
-// const detail = document.querySelectorAll(`.content`);
+
+const copyBtn = document.querySelectorAll('.copy');
 
 
+copyBtn.forEach(function(btn) {
 
-// allItems.forEach(item => {
-//     item.addEventListener('click', (e) => {
-        
-//         detail.forEach(item => {
-//             alert(item.innerHTML);
-//         })
-        
-
-//     })
-
+    btn.addEventListener('click', () => {
+        const link = btn.nextElementSibling;
+        const data = [new ClipboardItem({ "text/plain": new Blob([link.innerText], { type: "text/plain" }) }) ]
+      
+       navigator.clipboard.write(data).then(
+           function(){
+               alert('link Copied to clipboard')
+           },function(){
+               alert('error, please try again')
+           })
+    })
     
-// });
+
+
+})
+
+
 
 

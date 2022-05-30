@@ -93,6 +93,25 @@
     background-color: transparent;
 }
 
+.link{
+    display: none;
+}
+
+.dits{
+    margin: 2% 0;
+    padding: 2%;
+}
+.dits-1{
+    display: flex;
+    flex-direction: column;
+}
+
+.dits-1 small span{
+    color:#690085;
+    font-weight: 300;
+    
+}
+
 @media only screen  and (min-width:900px){
     .cont{
         max-width: 1160px;
