@@ -6,7 +6,7 @@
     object-fit: cover;
 }
 
-.container{
+.cont{
     background-color: white;
     width:90%;
     max-width: 900px;
@@ -83,12 +83,18 @@
 }
 
 .item:hover h3{
-    bottom: 0;
+    bottom: -10px;
     
 }
 
+.close-btn,.copy{
+    padding: 2% 10%;
+    border: 1px solid #690085;
+    background-color: transparent;
+}
+
 @media only screen  and (min-width:900px){
-    .container{
+    .cont{
         max-width: 1160px;
         padding:100px;
     }
