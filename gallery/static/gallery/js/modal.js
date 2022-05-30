@@ -1,8 +1,8 @@
 
-const copyBtn = document.querySelectorAll('.copy');
+const copyBtns = document.querySelectorAll('.copy');
 
 
-copyBtn.forEach(function(btn) {
+copyBtns.forEach(function(btn) {
 
     btn.addEventListener('click', () => {
         const link = btn.nextElementSibling;
@@ -15,9 +15,6 @@ copyBtn.forEach(function(btn) {
                alert('error, please try again')
            })
     })
-    
-
-
 })
 
 
