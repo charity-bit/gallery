@@ -1,8 +1,5 @@
 # The bigger Picture
 
-
-
-
 <img src="./images/bg.png">
 
 <br>
@@ -12,7 +9,6 @@
 - [Description](#description)
 - [Installation Requirement](#Installation)
 - [Technology Used](#technology-used)
-- [Reference](#reference)
 - [Licence](#licence)
 - [Authors Info](#author-Info)
 - [ToDO](#To-Do)
@@ -64,3 +60,17 @@ PSQL
 Javascript
 </li>
 </ul>
+
+
+## Licence
+
+   copyright © Charity 2022 - <a href="https://github.com/charity-bit/gallery/blob/main/LICENSE"> MIT </a>
+
+## Authors Info
+
+-LinkedIn - [Charity Nyanchera](https://www.linkedin.com/in/charitynyanchera)
+
+-twitter - [CcNyanchera](https://twitter.com/CcNyanchera)
+
+
+
