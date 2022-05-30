@@ -51,7 +51,8 @@ def filter_location(request):
             'images': res,
             "message":message,
             "length":length,
-            "locations":locations
+            "locations":locations,
+            "query":query
         }
 
         
